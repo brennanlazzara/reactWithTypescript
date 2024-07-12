@@ -12,11 +12,11 @@ Welcome to the Modern React and Redux Course Project! This project demonstrates 
 - **Axios**: Making HTTP requests to fetch data from external APIs.
 - **Functional Components**: Using React hooks for state and effect management.
 
-## Screenshots
+<!-- ## Screenshots
 
 ![Home Screen](./assets/screenshots/home.png)
 ![Voice Assistants](./assets/screenshots/voice-assistants.png)
-![GitHub Users](./assets/screenshots/github-users.png)
+![GitHub Users](./assets/screenshots/github-users.png) -->
 
 ## Getting Started
 
