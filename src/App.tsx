@@ -5,7 +5,6 @@ import Home from "./pages/Home/Home";
 import NameAgeCounter from "./pages/NameAgeCounter/NameAgeCounter";
 import VoiceAssistant from "./pages/VoiceAssistant/VoiceAssistant";
 import { Header } from "./components/Header/Header";
-import "./App.css";
 
 function App() {
   return (
