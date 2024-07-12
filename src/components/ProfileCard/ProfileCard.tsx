@@ -33,6 +33,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       boxShadow="2px 2px 12px rgba(0, 0, 0, 0.1)"
       transition="transform 0.2s"
       _hover={{ transform: "scale(1.05)", cursor: "pointer" }}
+      color="white"
     >
       <Image
         src={imageUrl}

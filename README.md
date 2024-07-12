@@ -62,23 +62,18 @@ src/
 ├── components/
 │   ├── Header/
 │   │   ├── Header.tsx
-│   │   └── style.css
 │   ├── Inputs/
 │   │   ├── InputAge.tsx
 │   │   └── InputName.tsx
 │   └── ProfileCard/
 │       ├── ProfileCard.tsx
-│       └── style.css
 ├── pages/
 │   ├── Home/
 │   │   ├── Home.tsx
-│   │   └── style.css
 │   ├── NameAgeCounter/
 │   │   ├── NameAgeCounter.tsx
-│   │   └── style.css
 │   └── VoiceAssistant/
 │       ├── VoiceAssistant.tsx
-│       └── style.css
 ├── App.tsx
 ├── index.tsx
 ├── custom.d.ts

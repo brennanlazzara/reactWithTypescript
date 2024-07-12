@@ -88,6 +88,7 @@ const VoiceAssistant: React.FC = () => {
     <>
       <Box
         fontSize="24px"
+        color="white"
         fontWeight="bold"
         mb="20px"
         display="flex"
@@ -118,6 +119,7 @@ const VoiceAssistant: React.FC = () => {
         display="flex"
         justifyContent="center"
         alignItems="center"
+        color="white"
       >
         GitHub Users
       </Box>

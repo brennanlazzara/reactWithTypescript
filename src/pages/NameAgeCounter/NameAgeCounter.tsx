@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "./style.css";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Input,
+  Text,
+  UnorderedList,
+  ListItem,
+} from "@chakra-ui/react";
 import InputName from "../../components/Inputs/InputName";
 import InputAge from "../../components/Inputs/InputAge";
 
@@ -83,76 +92,99 @@ const NameAgeCounter: React.FC = () => {
   };
 
   return (
-    <div className="App-header">
-      <h1 className="current-time">
+    <Box
+      bg="#171717"
+      minHeight="100vh"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+      fontSize="calc(10px + 2vmin)"
+      color="white"
+      p="20px"
+    >
+      <Heading as="h1" size="xl" textAlign="center" mb="20px">
         The current time is:
         <br />
         {currentDateTime}
-      </h1>
-      <div className="input-container">
+      </Heading>
+      <Flex flexDirection="column" alignItems="center" mb="20px">
         <InputName name={name} handleChange={handleChangeName} />
         <InputAge age={age} handleChange={handleChangeAge} />
-      </div>
-      <h2>
+      </Flex>
+      <Text fontSize="2xl" mb="20px">
         My name is "{name}" and I am "{age}" years old.
-      </h2>
-      <button className="input" onClick={submitForm}>
+      </Text>
+      <Button className="input" onClick={submitForm} mb="10px">
         Submit
-      </button>
-      <button className="input reset-button" onClick={resetInputs}>
+      </Button>
+      <Button className="input reset-button" onClick={resetInputs} mb="10px">
         Reset Inputs
-      </button>
+      </Button>
       {history.length > 0 && (
-        <button className="input" onClick={resetHistory}>
+        <Button className="input" onClick={resetHistory} mb="20px">
           Clear History of Submissions
-        </button>
+        </Button>
       )}
-      <h3>History of form submissions:</h3>
-      <ul>
+      <Heading as="h3" size="lg" mb="20px">
+        History of form submissions:
+      </Heading>
+      <UnorderedList listStyleType="none" p="0">
         {history.map((entry, index) => (
-          <li key={index} style={{ display: "flex", alignItems: "center" }}>
+          <ListItem
+            key={index}
+            display="flex"
+            alignItems="center"
+            p="10px"
+            mb="5px"
+            borderRadius="4px"
+            bg="#20232a"
+            color="#61dafb"
+          >
             {editIndex === index ? (
-              <div>
-                <input
+              <Flex>
+                <Input
                   className="input"
                   type="text"
                   value={editName}
                   onChange={handleEditNameChange}
+                  mr="10px"
                 />
-                <input
+                <Input
                   className="input"
                   type="number"
                   value={editAge}
                   onChange={handleEditAgeChange}
+                  mr="10px"
                 />
-                <button className="input" onClick={saveEdit}>
+                <Button className="input" onClick={saveEdit} mr="10px">
                   Save
-                </button>
-                <button className="input" onClick={cancelEdit}>
+                </Button>
+                <Button className="input" onClick={cancelEdit}>
                   Cancel
-                </button>
-              </div>
+                </Button>
+              </Flex>
             ) : (
-              <div style={{ flex: 1 }}>
-                <strong>Name:</strong> {entry.name}, <strong>Age:</strong>{" "}
-                {entry.age}, <strong>Submitted at:</strong> {entry.dateTime}
-                <button
+              <Flex flex="1" alignItems="center">
+                <Text flex="1">
+                  <strong>Name:</strong> {entry.name}, <strong>Age:</strong>{" "}
+                  {entry.age}, <strong>Submitted at:</strong> {entry.dateTime}
+                </Text>
+                <Button
                   className="input"
-                  style={{
-                    marginLeft: "10px",
-                    padding: "5px 10px",
-                    borderRadius: "4px",
-                  }}
+                  ml="10px"
+                  p="5px 10px"
+                  borderRadius="4px"
                   onClick={() => startEditing(index)}
                 >
                   Edit
-                </button>
-              </div>
+                </Button>
+              </Flex>
             )}
-          </li>
+          </ListItem>
         ))}
-      </ul>
-    </div>
+      </UnorderedList>
+    </Box>
   );
 };
 
