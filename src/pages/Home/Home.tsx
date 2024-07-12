@@ -14,7 +14,7 @@ const Home: React.FC = () => {
       bg="#20232a"
       width="100%"
     >
-      Witness The Power Of React
+      Witness The Power Of React With Typescript And Chakra UI
     </Box>
   );
 };
