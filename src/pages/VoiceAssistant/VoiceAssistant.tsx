@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Heading, Flex } from "@chakra-ui/react";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
 import alexaImg from "../../assets/images/alexa.png";
 import cortanaImg from "../../assets/images/cortana.png";
@@ -77,23 +77,31 @@ const VoiceAssistant: React.FC = () => {
     window.open(profile.url, "_blank");
   };
 
-  if (loading) {
+  if (loading)
     return (
       <Box className="voice-assistant-header">
         <Heading>Loading...</Heading>
       </Box>
     );
-  }
 
   return (
     <>
-      <Box className="voice-assistant-header">
-        <Heading>Voice Assistants</Heading>
+      <Box
+        fontSize="24px"
+        fontWeight="bold"
+        mb="20px"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        Voice Assistants
       </Box>
-      <SimpleGrid
-        columns={[1, 2, 3]}
-        spacing={10}
-        className="voice-assistant-container"
+      <Flex
+        justifyContent="center"
+        alignItems="flex-start"
+        flexDirection="row"
+        p="20px"
+        flexWrap="nowrap"
       >
         {voiceAssistants.map((profile) => (
           <ProfileCard
@@ -102,14 +110,23 @@ const VoiceAssistant: React.FC = () => {
             onProfileClick={handleProfileClick}
           />
         ))}
-      </SimpleGrid>
-      <Box className="voice-assistant-header">
-        <Heading>GitHub Users</Heading>
+      </Flex>
+      <Box
+        fontSize="24px"
+        fontWeight="bold"
+        mb="20px"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        GitHub Users
       </Box>
-      <SimpleGrid
-        columns={[1, 2, 3]}
-        spacing={10}
-        className="voice-assistant-container"
+      <Flex
+        justifyContent="center"
+        alignItems="flex-start"
+        flexDirection="row"
+        p="20px"
+        flexWrap="nowrap"
       >
         {profiles.map((profile) => (
           <ProfileCard
@@ -118,7 +135,7 @@ const VoiceAssistant: React.FC = () => {
             onProfileClick={handleProfileClick}
           />
         ))}
-      </SimpleGrid>
+      </Flex>
     </>
   );
 };

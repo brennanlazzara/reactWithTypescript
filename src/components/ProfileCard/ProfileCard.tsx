@@ -23,22 +23,29 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 
   return (
     <Box
-      className="profile-card"
       onClick={() => onProfileClick(profile)}
-      borderWidth="1px"
-      borderRadius="lg"
-      overflow="hidden"
-      p={4}
-      _hover={{ cursor: "pointer", boxShadow: "lg" }}
+      border="2px solid #ccc"
+      borderRadius="8px"
+      p="16px"
+      m="10px"
+      width="250px"
+      textAlign="center"
+      boxShadow="2px 2px 12px rgba(0, 0, 0, 0.1)"
+      transition="transform 0.2s"
+      _hover={{ transform: "scale(1.05)", cursor: "pointer" }}
     >
       <Image
         src={imageUrl}
         alt={`${name}'s profile`}
-        className="profile-image"
+        width="100%"
+        height="auto"
+        borderRadius="8px"
       />
-      <Heading size="md">{name}</Heading>
-      <Text>Social Handle: {socialHandle}</Text>
-      <Text>{description}</Text>
+      <Heading size="md" mt="4">
+        {name}
+      </Heading>
+      <Text mt="2">Social Handle: {socialHandle}</Text>
+      <Text mt="2">{description}</Text>
     </Box>
   );
 };
