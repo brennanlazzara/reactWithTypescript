@@ -1,0 +1,10 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 3em;
+  color: #61dafb;
+  text-align: center;
+  background-color: #20232a;
+}

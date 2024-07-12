@@ -1,0 +1,17 @@
+.voice-assistant-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Changed to flex-start for better alignment */
+  flex-direction: row; /* Ensure this is row for horizontal alignment */
+  padding: 20px;
+  flex-wrap: nowrap; /* Ensure no wrapping occurs */
+}
+
+.voice-assistant-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
