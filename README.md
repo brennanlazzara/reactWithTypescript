@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# React with Typescript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Welcome to the Modern React and Redux Course Project! This project demonstrates a modern React application integrated with Redux and TypeScript, utilizing Chakra UI for a sleek and responsive user interface. The application includes several interactive components, showcasing the use of React hooks, API calls, and state management.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **TypeScript**: Ensuring type safety and a better development experience.
+- **Chakra UI**: Providing a consistent and responsive design system.
+- **React Router**: Enabling navigation between different components.
+- **Axios**: Making HTTP requests to fetch data from external APIs.
+- **Functional Components**: Using React hooks for state and effect management.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Screenshots
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Home Screen](./assets/screenshots/home.png)
+![Voice Assistants](./assets/screenshots/voice-assistants.png)
+![GitHub Users](./assets/screenshots/github-users.png)
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js (>=14.x)
+- npm (>=6.x) or yarn (>=1.x)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git https://github.com/brennanlazzara/reactWithTypescript.git
+   cd jsx
 
-### `npm run eject`
+npm install
+# or
+yarn install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm start
+# or
+yarn start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm run build
+# or
+yarn build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Project Structure
 
-## Learn More
+src/
+├── assets/
+│   ├── images/
+│   │   ├── alexa.png
+│   │   ├── cortana.png
+│   │   └── siri.png
+│   └── screenshots/
+│       ├── home.png
+│       ├── voice-assistants.png
+│       └── github-users.png
+├── components/
+│   ├── Header/
+│   │   ├── Header.tsx
+│   │   └── style.css
+│   ├── Inputs/
+│   │   ├── InputAge.tsx
+│   │   └── InputName.tsx
+│   └── ProfileCard/
+│       ├── ProfileCard.tsx
+│       └── style.css
+├── pages/
+│   ├── Home/
+│   │   ├── Home.tsx
+│   │   └── style.css
+│   ├── NameAgeCounter/
+│   │   ├── NameAgeCounter.tsx
+│   │   └── style.css
+│   └── VoiceAssistant/
+│       ├── VoiceAssistant.tsx
+│       └── style.css
+├── App.tsx
+├── index.tsx
+├── custom.d.ts
+└── ... other config files
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
