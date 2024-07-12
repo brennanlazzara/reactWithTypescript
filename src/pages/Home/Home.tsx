@@ -8,10 +8,11 @@ const Home: React.FC = () => {
       justifyContent="center"
       alignItems="center"
       minHeight="100vh"
-      bg="gray.800"
-      color="white"
+      fontSize="3em"
+      color="#61dafb"
       textAlign="center"
-      fontSize="3xl"
+      bg="#20232a"
+      width="100%"
     >
       Witness The Power Of React
     </Box>
