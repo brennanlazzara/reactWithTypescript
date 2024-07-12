@@ -1,20 +1,22 @@
 import React from "react";
-import { Box, Flex, Link } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { Box, Flex, List, ListItem } from "@chakra-ui/react";
+import NavLink from "./NavLink";
 
 export const Header: React.FC = () => {
   return (
-    <Box bg="gray.700" p={4}>
-      <Flex justifyContent="space-around">
-        <Link as={RouterLink} to="/" color="white">
-          Home
-        </Link>
-        <Link as={RouterLink} to="/nameAgeCounter" color="white">
-          Name Age Counter
-        </Link>
-        <Link as={RouterLink} to="/voiceAssistant" color="white">
-          Voice Assistant
-        </Link>
+    <Box bg="#333" p="10px 20px">
+      <Flex justifyContent="center" alignItems="center">
+        <List display="flex" m={0} p={0} listStyleType="none">
+          <ListItem mx="15px">
+            <NavLink to="/">Home</NavLink>
+          </ListItem>
+          <ListItem mx="15px">
+            <NavLink to="/nameAgeCounter">Name Age Counter</NavLink>
+          </ListItem>
+          <ListItem mx="15px">
+            <NavLink to="/voiceAssistant">Voice Assistant</NavLink>
+          </ListItem>
+        </List>
       </Flex>
     </Box>
   );
