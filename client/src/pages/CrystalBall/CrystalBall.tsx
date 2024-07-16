@@ -34,16 +34,13 @@ const CrystalBall: React.FC = () => {
     setLoading(true);
 
     try {
-      const completion = await retryOperation(async () => {
-        const response = await axios.post("http://localhost:3001/api/chat", {
-          model: "claude-3-sonnet-20240229",
-          max_tokens: 1000,
+      const response = await retryOperation(async () => {
+        return axios.post("http://localhost:3001/chat", {
           messages: [...messages, userMessage],
         });
-        return response.data;
       });
 
-      const botResponse = completion.content[0].text;
+      const botResponse = response.data.response;
       setMessages((prevMessages) => [
         ...prevMessages,
         { role: "assistant", content: botResponse },
