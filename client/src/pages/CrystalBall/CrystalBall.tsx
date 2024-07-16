@@ -61,59 +61,70 @@ const CrystalBall: React.FC = () => {
   }, [input, messages, retryOperation]);
 
   return (
-    <Box p={4} bg="gray.700" borderRadius="md" w="400px">
-      <VStack spacing={4} align="stretch">
-        <Text color="white" fontWeight="bold" textAlign="center">
-          Welcome to the ChatBot Program!
-        </Text>
-        <Text color="white" fontSize="sm" textAlign="center">
-          You can start chatting with the bot. Type your message below.
-        </Text>
-        <Box
-          bg="gray.800"
-          p={4}
-          borderRadius="md"
-          overflowY="scroll"
-          maxHeight="300px"
-        >
-          {messages.length === 0 ? (
-            <Text color="gray.500" textAlign="center">
-              No messages yet. Start a conversation!
-            </Text>
-          ) : (
-            messages.map((msg, index) => (
-              <Text
-                key={index}
-                alignSelf={msg.role === "user" ? "flex-end" : "flex-start"}
-                bg={msg.role === "user" ? "blue.500" : "green.500"}
-                p={2}
-                borderRadius="md"
-                mb={2}
-                maxWidth="80%"
-              >
-                {msg.content}
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      minHeight="100vh"
+      bg="#171717"
+    >
+      <Box p={4} bg="#171717" borderRadius="md" w="400px" boxShadow="xl">
+        <VStack spacing={4} align="stretch">
+          <Text color="white" fontWeight="bold" textAlign="center">
+            Welcome to the ChatBot Program!
+          </Text>
+          <Text color="gray.400" fontSize="sm" textAlign="center">
+            You can start chatting with the bot. Type your message below.
+          </Text>
+          <Box
+            bg="gray.800"
+            p={4}
+            borderRadius="md"
+            overflowY="scroll"
+            maxHeight="300px"
+          >
+            {messages.length === 0 ? (
+              <Text color="gray.500" textAlign="center">
+                No messages yet. Start a conversation!
               </Text>
-            ))
-          )}
-        </Box>
-        <Input
-          placeholder="Type your message..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) =>
-            e.key === "Enter" && !loading && handleSendMessage()
-          }
-          bg="white"
-        />
-        <Button
-          onClick={handleSendMessage}
-          isLoading={loading}
-          colorScheme="blue"
-          isDisabled={loading || input.trim() === ""}
-        >
-          Send
-        </Button>
-      </VStack>
+            ) : (
+              messages.map((msg, index) => (
+                <Text
+                  key={index}
+                  alignSelf={msg.role === "user" ? "flex-end" : "flex-start"}
+                  bg={msg.role === "user" ? "blue.500" : "green.500"}
+                  color="white"
+                  p={2}
+                  borderRadius="md"
+                  mb={2}
+                  maxWidth="80%"
+                >
+                  {msg.content}
+                </Text>
+              ))
+            )}
+          </Box>
+          <Input
+            placeholder="Type your message..."
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) =>
+              e.key === "Enter" && !loading && handleSendMessage()
+            }
+            bg="gray.700"
+            color="white"
+            _placeholder={{ color: "gray.400" }}
+          />
+          <Button
+            onClick={handleSendMessage}
+            isLoading={loading}
+            colorScheme="blue"
+            isDisabled={loading || input.trim() === ""}
+          >
+            Send
+          </Button>
+        </VStack>
+      </Box>
     </Box>
   );
 };
