@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import { Box, Button, Input, VStack, Text } from "@chakra-ui/react";
 import axios from "axios";
 
@@ -36,7 +36,8 @@ const CrystalBall: React.FC = () => {
     try {
       const response = await retryOperation(async () => {
         return axios.post("http://localhost:3001/chat", {
-          messages: [...messages, userMessage],
+          messages:
+            messages.length === 0 ? [userMessage] : [...messages, userMessage],
         });
       });
 
@@ -59,18 +60,15 @@ const CrystalBall: React.FC = () => {
     }
   }, [input, messages, retryOperation]);
 
-  useEffect(() => {
-    const welcomeMessage = {
-      role: "assistant",
-      content:
-        "Welcome to the ChatBot Program! You can start chatting with the bot. Type 'exit' to end the conversation.",
-    };
-    setMessages([welcomeMessage]);
-  }, []);
-
   return (
     <Box p={4} bg="gray.700" borderRadius="md" w="400px">
       <VStack spacing={4} align="stretch">
+        <Text color="white" fontWeight="bold" textAlign="center">
+          Welcome to the ChatBot Program!
+        </Text>
+        <Text color="white" fontSize="sm" textAlign="center">
+          You can start chatting with the bot. Type your message below.
+        </Text>
         <Box
           bg="gray.800"
           p={4}
@@ -78,18 +76,25 @@ const CrystalBall: React.FC = () => {
           overflowY="scroll"
           maxHeight="300px"
         >
-          {messages.map((msg, index) => (
-            <Text
-              key={index}
-              alignSelf={msg.role === "user" ? "flex-end" : "flex-start"}
-              bg={msg.role === "user" ? "blue.500" : "green.500"}
-              p={2}
-              borderRadius="md"
-              mb={2}
-            >
-              {msg.content}
+          {messages.length === 0 ? (
+            <Text color="gray.500" textAlign="center">
+              No messages yet. Start a conversation!
             </Text>
-          ))}
+          ) : (
+            messages.map((msg, index) => (
+              <Text
+                key={index}
+                alignSelf={msg.role === "user" ? "flex-end" : "flex-start"}
+                bg={msg.role === "user" ? "blue.500" : "green.500"}
+                p={2}
+                borderRadius="md"
+                mb={2}
+                maxWidth="80%"
+              >
+                {msg.content}
+              </Text>
+            ))
+          )}
         </Box>
         <Input
           placeholder="Type your message..."
@@ -98,6 +103,7 @@ const CrystalBall: React.FC = () => {
           onKeyDown={(e) =>
             e.key === "Enter" && !loading && handleSendMessage()
           }
+          bg="white"
         />
         <Button
           onClick={handleSendMessage}

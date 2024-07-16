@@ -19,10 +19,15 @@ const anthropic = new Anthropic({
 app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Parse JSON request bodies
 
-// Define chat endpoint
+// Chatbot Endpoint
 app.post("/chat", async (req, res) => {
   try {
     const { messages } = req.body;
+
+    // Ensure the first message has a "user" role
+    if (messages.length === 0 || messages[0].role !== "user") {
+      throw new Error("First message must have a 'user' role");
+    }
 
     // Call Anthropic API
     const completion = await anthropic.messages.create({
@@ -36,8 +41,8 @@ app.post("/chat", async (req, res) => {
   } catch (error) {
     console.error("Error:", error);
     res
-      .status(500)
-      .json({ error: "An error occurred while processing your request." });
+      .status(400)
+      .json({ error: error.message || "An error occurred while processing your request." });
   }
 });
 
