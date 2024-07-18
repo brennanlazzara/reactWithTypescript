@@ -4,6 +4,7 @@ import { Box } from "@chakra-ui/react";
 import CrystalBall from "./pages/CrystalBall/CrystalBall";
 import NameAgeCounter from "./pages/NameAgeCounter/NameAgeCounter";
 import VoiceAssistant from "./pages/VoiceAssistant/VoiceAssistant";
+import AnimalStickers from "./pages/AnimalStickers/AnimalStickers";
 import { Header } from "./components/Header/Header";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<CrystalBall />} />
           <Route path='/nameAgeCounter' element={<NameAgeCounter />} />
           <Route path='/voiceAssistant' element={<VoiceAssistant />} />
+          <Route path='/animalStickers' element={<AnimalStickers />} />
         </Routes>
       </Box>
     </Router>
