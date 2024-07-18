@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Box, Heading, Flex } from "@chakra-ui/react";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
-import alexaImg from "../../assets/images/alexa.png";
-import cortanaImg from "../../assets/images/cortana.png";
-import siriImg from "../../assets/images/siri.png";
+import alexaImg from "../../assets/images/voiceAssistant/alexa.png";
+import cortanaImg from "../../assets/images/voiceAssistant/cortana.png";
+import siriImg from "../../assets/images/voiceAssistant/siri.png";
 
 interface Profile {
   id: number;
