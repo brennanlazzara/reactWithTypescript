@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
       <Flex justifyContent="center" alignItems="center">
         <List display="flex" m={0} p={0} listStyleType="none">
           <ListItem mx="15px">
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">AI ChatBot</NavLink>
           </ListItem>
           <ListItem mx="15px">
             <NavLink to="/nameAgeCounter">Name Age Counter</NavLink>

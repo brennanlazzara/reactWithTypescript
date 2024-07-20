@@ -33,51 +33,60 @@ Welcome to the Modern React and Redux Course Project! This project demonstrates 
    git https://github.com/brennanlazzara/reactWithTypescript.git
    cd jsx
 
-npm install
+## FROM ROOT OF PROJECT
+npm install -all
 # or
 yarn install
 
+## ALSO FROM ROOT:
+### SERVER & CLIENT RUN CONCURRENTLY
 npm start
 # or
 yarn start
 
-npm run build
-# or
-yarn build
-
-
 ### Project Structure
 
 ```
-src/
-├── assets/
-│   ├── images/
-│   │   ├── alexa.png
-│   │   ├── cortana.png
-│   │   └── siri.png
-│   └── screenshots/
-│       ├── home.png
-│       ├── voice-assistants.png
-│       └── github-users.png
-├── components/
-│   ├── Header/
-│   │   ├── Header.tsx
-│   ├── Inputs/
-│   │   ├── InputAge.tsx
-│   │   └── InputName.tsx
-│   └── ProfileCard/
-│       ├── ProfileCard.tsx
-├── pages/
-│   ├── Home/
-│   │   ├── Home.tsx
-│   ├── NameAgeCounter/
-│   │   ├── NameAgeCounter.tsx
-│   └── VoiceAssistant/
-│       ├── VoiceAssistant.tsx
-├── App.tsx
-├── index.tsx
-├── custom.d.ts
-└── ... other config files
+JSX/
+├── client/
+│   ├── node_modules/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   │   └── images/
+│   │   ├── components/
+│   │   │   ├── Header/
+│   │   │   ├── Inputs/
+│   │   │   └── ProfileCard/
+│   │   ├── pages/
+│   │   │   ├── AnimalStickers/
+│   │   │   │   └── AnimalStickers.tsx
+│   │   │   ├── CrystalBall/
+│   │   │   │   └── CrystalBall.tsx
+│   │   │   ├── NameAgeCounter/
+│   │   │   ├── SearchPics/
+│   │   │   │   └── SearchPics.tsx
+│   │   │   └── VoiceAssistant/
+│   │   │       └── VoiceAssistant.tsx
+│   │   ├── App.tsx
+│   │   ├── index.tsx
+│   │   └── custom.d.ts
+│   ├── .env
+│   ├── .gitignore
+│   ├── package-lock.json
+│   ├── package.json
+│   └── tsconfig.json
+├── server/
+│   ├── node_modules/
+│   ├── .env
+│   ├── .gitignore
+│   ├── package-lock.json
+│   ├── package.json
+│   └── server.js
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
 ```
 
 ## Key Components
