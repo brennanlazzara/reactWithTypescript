@@ -16,6 +16,12 @@ export const Header: React.FC = () => {
           <ListItem mx="15px">
             <NavLink to="/voiceAssistant">Voice Assistant</NavLink>
           </ListItem>
+          <ListItem mx="15px">
+            <NavLink to="/animalStickers">Animal Stickers</NavLink>
+          </ListItem>
+          <ListItem mx="15px">
+            <NavLink to="/searchPics">Search Pics</NavLink>
+          </ListItem>
         </List>
       </Flex>
     </Box>
