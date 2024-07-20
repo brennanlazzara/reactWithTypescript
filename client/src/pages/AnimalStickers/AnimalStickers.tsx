@@ -23,6 +23,14 @@ type Animal = {
 };
 
 const AnimalStickers: React.FC = () => {
+  const [animals, setAnimals] = useState<Animal[]>([]);
+  const [text, setText] = useState<string>("");
+
+  const handleTextChange = () => {
+    const text = "Nadda bruh";
+    setText(text);
+  };
+
   const initialAnimalImages: Animal[] = [
     { name: "Bird", image: bird, clicks: 0 },
     { name: "Cat", image: cat, clicks: 0 },
@@ -31,8 +39,6 @@ const AnimalStickers: React.FC = () => {
     { name: "Gator", image: gator, clicks: 0 },
     { name: "Horse", image: horse, clicks: 0 },
   ];
-
-  const [animals, setAnimals] = useState<Animal[]>([]);
 
   const addAnimal = () => {
     if (animals.length < initialAnimalImages.length) {
@@ -70,6 +76,8 @@ const AnimalStickers: React.FC = () => {
       >
         Add Animal
       </Button>
+      <Button onClick={handleTextChange}>Change The Text</Button>
+      <Text color="white">Waddup bruh: {text}</Text>
       <Wrap>
         {animals.map((animal, index) => (
           <WrapItem key={index}>
